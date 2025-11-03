@@ -1,2 +1,2 @@
-# Eric Dong
+# My blog
 
