@@ -1,9 +1,10 @@
 title: "Eric’s Blog"
 description: "Blogging about code, projects, and photos"
 url: "https://dong0085.github.io"
-theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-include-cache   
   - jekyll-paginate
 

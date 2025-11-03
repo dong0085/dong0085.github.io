@@ -1390,7 +1390,8 @@ th {
  *  </div>
  */
 /* Default notice */
-.notice {
+.notice,
+.markdown-alert {
   margin: 2em 0 !important;
   /* override*/
   padding: 1em;
@@ -1402,38 +1403,47 @@ th {
   background-color: #f2f3f3;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(189, 193, 196, 0.25); }
-  .notice h4 {
+  .notice h4,
+  .markdown-alert h4 {
     margin-top: 0 !important;
     /* override*/
     margin-bottom: 0.75em;
     line-height: inherit; }
-  .page__content .notice h4 {
+  .page__content .notice, .markdown-alert h4 {
     /* using at-root to override .page-content h4 font size*/
     margin-bottom: 0;
     font-size: 1em; }
-  .notice p:last-child {
+  .notice p:last-child,
+  .markdown-alert p:last-child {
     margin-bottom: 0 !important;
     /* override*/ }
-  .notice h4 + p {
+  .notice h4 + p,
+  .markdown-alert h4 + p {
     /* remove space above paragraphs that appear directly after notice headline*/
     margin-top: 0;
     padding-top: 0; }
-  .notice a {
+  .notice a,
+  .markdown-alert a {
     color: #aaaeb0; }
-    .notice a:hover {
+    .notice a:hover,
+    .markdown-alert a:hover {
       color: #5f6162; }
-  blockquote.notice {
+  blockquote.notice, blockquote.markdown-alert {
     border-inline-start-color: #aaaeb0; }
-  .notice code {
+  .notice code,
+  .markdown-alert code {
     background-color: #f8f9f9; }
-  .notice pre code {
+  .notice pre code,
+  .markdown-alert pre code {
     background-color: inherit; }
-  .notice ul:last-child {
+  .notice ul:last-child,
+  .markdown-alert ul:last-child {
     margin-bottom: 0;
     /* override*/ }
 
 /* Primary notice */
-.notice--primary {
+.notice--primary,
+.markdown-alert-important {
   margin: 2em 0 !important;
   /* override*/
   padding: 1em;
@@ -1445,38 +1455,47 @@ th {
   background-color: #e2e4e5;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(111, 119, 125, 0.25); }
-  .notice--primary h4 {
+  .notice--primary h4,
+  .markdown-alert-important h4 {
     margin-top: 0 !important;
     /* override*/
     margin-bottom: 0.75em;
     line-height: inherit; }
-  .page__content .notice--primary h4 {
+  .page__content .notice--primary, .markdown-alert-important h4 {
     /* using at-root to override .page-content h4 font size*/
     margin-bottom: 0;
     font-size: 1em; }
-  .notice--primary p:last-child {
+  .notice--primary p:last-child,
+  .markdown-alert-important p:last-child {
     margin-bottom: 0 !important;
     /* override*/ }
-  .notice--primary h4 + p {
+  .notice--primary h4 + p,
+  .markdown-alert-important h4 + p {
     /* remove space above paragraphs that appear directly after notice headline*/
     margin-top: 0;
     padding-top: 0; }
-  .notice--primary a {
+  .notice--primary a,
+  .markdown-alert-important a {
     color: #646b71; }
-    .notice--primary a:hover {
+    .notice--primary a:hover,
+    .markdown-alert-important a:hover {
       color: #383c3f; }
-  blockquote.notice--primary {
+  blockquote.notice--primary, blockquote.markdown-alert-important {
     border-inline-start-color: #646b71; }
-  .notice--primary code {
+  .notice--primary code,
+  .markdown-alert-important code {
     background-color: #f1f1f2; }
-  .notice--primary pre code {
+  .notice--primary pre code,
+  .markdown-alert-important pre code {
     background-color: inherit; }
-  .notice--primary ul:last-child {
+  .notice--primary ul:last-child,
+  .markdown-alert-important ul:last-child {
     margin-bottom: 0;
     /* override*/ }
 
 /* Info notice */
-.notice--info {
+.notice--info,
+.markdown-alert-note {
   margin: 2em 0 !important;
   /* override*/
   padding: 1em;
@@ -1488,38 +1507,47 @@ th {
   background-color: #d8ebf1;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(59, 156, 186, 0.25); }
-  .notice--info h4 {
+  .notice--info h4,
+  .markdown-alert-note h4 {
     margin-top: 0 !important;
     /* override*/
     margin-bottom: 0.75em;
     line-height: inherit; }
-  .page__content .notice--info h4 {
+  .page__content .notice--info, .markdown-alert-note h4 {
     /* using at-root to override .page-content h4 font size*/
     margin-bottom: 0;
     font-size: 1em; }
-  .notice--info p:last-child {
+  .notice--info p:last-child,
+  .markdown-alert-note p:last-child {
     margin-bottom: 0 !important;
     /* override*/ }
-  .notice--info h4 + p {
+  .notice--info h4 + p,
+  .markdown-alert-note h4 + p {
     /* remove space above paragraphs that appear directly after notice headline*/
     margin-top: 0;
     padding-top: 0; }
-  .notice--info a {
+  .notice--info a,
+  .markdown-alert-note a {
     color: #358ca7; }
-    .notice--info a:hover {
+    .notice--info a:hover,
+    .markdown-alert-note a:hover {
       color: #1e4e5d; }
-  blockquote.notice--info {
+  blockquote.notice--info, blockquote.markdown-alert-note {
     border-inline-start-color: #358ca7; }
-  .notice--info code {
+  .notice--info code,
+  .markdown-alert-note code {
     background-color: #ebf5f8; }
-  .notice--info pre code {
+  .notice--info pre code,
+  .markdown-alert-note pre code {
     background-color: inherit; }
-  .notice--info ul:last-child {
+  .notice--info ul:last-child,
+  .markdown-alert-note ul:last-child {
     margin-bottom: 0;
     /* override*/ }
 
 /* Warning notice */
-.notice--warning {
+.notice--warning,
+.markdown-alert-warning {
   margin: 2em 0 !important;
   /* override*/
   padding: 1em;
@@ -1531,38 +1559,47 @@ th {
   background-color: #f7e5cd;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(214, 127, 5, 0.25); }
-  .notice--warning h4 {
+  .notice--warning h4,
+  .markdown-alert-warning h4 {
     margin-top: 0 !important;
     /* override*/
     margin-bottom: 0.75em;
     line-height: inherit; }
-  .page__content .notice--warning h4 {
+  .page__content .notice--warning, .markdown-alert-warning h4 {
     /* using at-root to override .page-content h4 font size*/
     margin-bottom: 0;
     font-size: 1em; }
-  .notice--warning p:last-child {
+  .notice--warning p:last-child,
+  .markdown-alert-warning p:last-child {
     margin-bottom: 0 !important;
     /* override*/ }
-  .notice--warning h4 + p {
+  .notice--warning h4 + p,
+  .markdown-alert-warning h4 + p {
     /* remove space above paragraphs that appear directly after notice headline*/
     margin-top: 0;
     padding-top: 0; }
-  .notice--warning a {
+  .notice--warning a,
+  .markdown-alert-warning a {
     color: #c17205; }
-    .notice--warning a:hover {
+    .notice--warning a:hover,
+    .markdown-alert-warning a:hover {
       color: #6b4003; }
-  blockquote.notice--warning {
+  blockquote.notice--warning, blockquote.markdown-alert-warning {
     border-inline-start-color: #c17205; }
-  .notice--warning code {
+  .notice--warning code,
+  .markdown-alert-warning code {
     background-color: #fbf2e6; }
-  .notice--warning pre code {
+  .notice--warning pre code,
+  .markdown-alert-warning pre code {
     background-color: inherit; }
-  .notice--warning ul:last-child {
+  .notice--warning ul:last-child,
+  .markdown-alert-warning ul:last-child {
     margin-bottom: 0;
     /* override*/ }
 
 /* Success notice */
-.notice--success {
+.notice--success,
+.markdown-alert-tip {
   margin: 2em 0 !important;
   /* override*/
   padding: 1em;
@@ -1574,38 +1611,47 @@ th {
   background-color: #d9edd9;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(63, 166, 63, 0.25); }
-  .notice--success h4 {
+  .notice--success h4,
+  .markdown-alert-tip h4 {
     margin-top: 0 !important;
     /* override*/
     margin-bottom: 0.75em;
     line-height: inherit; }
-  .page__content .notice--success h4 {
+  .page__content .notice--success, .markdown-alert-tip h4 {
     /* using at-root to override .page-content h4 font size*/
     margin-bottom: 0;
     font-size: 1em; }
-  .notice--success p:last-child {
+  .notice--success p:last-child,
+  .markdown-alert-tip p:last-child {
     margin-bottom: 0 !important;
     /* override*/ }
-  .notice--success h4 + p {
+  .notice--success h4 + p,
+  .markdown-alert-tip h4 + p {
     /* remove space above paragraphs that appear directly after notice headline*/
     margin-top: 0;
     padding-top: 0; }
-  .notice--success a {
+  .notice--success a,
+  .markdown-alert-tip a {
     color: #399539; }
-    .notice--success a:hover {
+    .notice--success a:hover,
+    .markdown-alert-tip a:hover {
       color: #205320; }
-  blockquote.notice--success {
+  blockquote.notice--success, blockquote.markdown-alert-tip {
     border-inline-start-color: #399539; }
-  .notice--success code {
+  .notice--success code,
+  .markdown-alert-tip code {
     background-color: #ecf6ec; }
-  .notice--success pre code {
+  .notice--success pre code,
+  .markdown-alert-tip pre code {
     background-color: inherit; }
-  .notice--success ul:last-child {
+  .notice--success ul:last-child,
+  .markdown-alert-tip ul:last-child {
     margin-bottom: 0;
     /* override*/ }
 
 /* Danger notice */
-.notice--danger {
+.notice--danger,
+.markdown-alert-caution {
   margin: 2em 0 !important;
   /* override*/
   padding: 1em;
@@ -1617,33 +1663,41 @@ th {
   background-color: #fcdfde;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(238, 95, 91, 0.25); }
-  .notice--danger h4 {
+  .notice--danger h4,
+  .markdown-alert-caution h4 {
     margin-top: 0 !important;
     /* override*/
     margin-bottom: 0.75em;
     line-height: inherit; }
-  .page__content .notice--danger h4 {
+  .page__content .notice--danger, .markdown-alert-caution h4 {
     /* using at-root to override .page-content h4 font size*/
     margin-bottom: 0;
     font-size: 1em; }
-  .notice--danger p:last-child {
+  .notice--danger p:last-child,
+  .markdown-alert-caution p:last-child {
     margin-bottom: 0 !important;
     /* override*/ }
-  .notice--danger h4 + p {
+  .notice--danger h4 + p,
+  .markdown-alert-caution h4 + p {
     /* remove space above paragraphs that appear directly after notice headline*/
     margin-top: 0;
     padding-top: 0; }
-  .notice--danger a {
+  .notice--danger a,
+  .markdown-alert-caution a {
     color: #d65652; }
-    .notice--danger a:hover {
+    .notice--danger a:hover,
+    .markdown-alert-caution a:hover {
       color: #77302e; }
-  blockquote.notice--danger {
+  blockquote.notice--danger, blockquote.markdown-alert-caution {
     border-inline-start-color: #d65652; }
-  .notice--danger code {
+  .notice--danger code,
+  .markdown-alert-caution code {
     background-color: #fdefef; }
-  .notice--danger pre code {
+  .notice--danger pre code,
+  .markdown-alert-caution pre code {
     background-color: inherit; }
-  .notice--danger ul:last-child {
+  .notice--danger ul:last-child,
+  .markdown-alert-caution ul:last-child {
     margin-bottom: 0;
     /* override*/ }
 
@@ -4215,3 +4269,25 @@ body {
   .adsbygoogle {
     display: none !important;
     height: 1px !important; } }
+/* Footer social icons styling */
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  transition: color 0.3s ease, transform 0.2s ease; }
+  .social-icons a:hover {
+    color: #333;
+    transform: scale(1.1); }
+
+.social-icons span {
+  font-size: 0.9em; }
+
+/* Active navigation link styling */
+.greedy-nav a.active {
+  color: #3d405b;
+  font-weight: bold;
+  border-bottom: 2px solid #3d405b; }
+
+.masthead__menu-item a.active {
+  color: #3d405b;
+  font-weight: bold; }
