@@ -1,34 +1,22 @@
 # .github/workflows/pages.yml
 name: Build Jekyll with Actions and deploy to Pages
 on:
-  push: { branches: [main] }
+  push: { branches: [ main ] }
   workflow_dispatch:
 permissions:
   contents: read
   pages: write
   id-token: write
-concurrency: { group: 'pages', cancel-in-progress: true }
+concurrency: { group: "pages", cancel-in-progress: true }
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
-          bundler-cache: true
-
-      - run: bundle install --jobs 4 --retry 3
-
-      - run: bundle exec jekyll build -d _site
-
       - uses: actions/configure-pages@v5
-
+      - uses: actions/jekyll-build-pages@v1
       - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
+      
   deploy:
     needs: build
     runs-on: ubuntu-latest
