@@ -1,0 +1,145 @@
+{%- comment -%}
+masthead.html
+Normalization + starts-with section matching + configurable blog index.
+{%- endcomment -%}
+
+{% capture logo_path %}{{ site.logo }}{% endcapture %}
+{% assign baseurl = site.baseurl | default: '' %}
+
+{%- comment -%}
+Normalize current page URL:
+- remove index.html
+- collapse double slashes
+- remove site.baseurl for comparison
+- ensure trailing slash (except for root)
+{%- endcomment -%}
+{% capture current_raw %}{{ page.url | default: '/' | replace: 'index.html','' | replace: '//','/' | strip }}{% endcapture %}
+{% assign current = current_raw | replace: baseurl, '' %}
+{% if current == '' %}{% assign current = '/' %}{% endif %}
+{% unless current == '/' %}
+  {% unless current | slice: -1, 1 == '/' %}
+    {% assign current = current | append: '/' %}
+  {% endunless %}
+{% endunless %}
+
+{% assign is_post = page.collection == 'posts' %}
+
+{%- comment -%}
+Normalize site.blog_index (configurable). Defaults to '/blog/'.
+{%- endcomment -%}
+{% assign raw_blog_index = site.blog_index | default: '/blog/' %}
+{% capture blog_c %}{{ raw_blog_index | replace: 'index.html','' | replace: '//','/' | strip }}{% endcapture %}
+{% assign blog_index = blog_c | replace: baseurl, '' %}
+{% if blog_index == '' %}{% assign blog_index = '/' %}{% endif %}
+{% unless blog_index == '/' %}
+  {% unless blog_index | slice: -1, 1 == '/' %}
+    {% assign blog_index = blog_index | append: '/' %}
+  {% endunless %}
+{% endunless %}
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        {% unless logo_path == empty %}
+        <a class="site-logo" href="{{ '/' | relative_url }}">
+          <img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}">
+        </a>
+        {% endunless %}
+
+        <a class="site-title" href="{{ '/' | relative_url }}">
+          {{ site.masthead_title | default: site.title | escape_once | strip }}
+          {% if site.subtitle %}
+            <span class="site-subtitle">{{ site.subtitle | escape_once | strip }}</span>
+          {% endif %}
+        </a>
+
+        {%- comment -%}
+          Visible navigation links with robust "active" logic.
+          Matching rules:
+            - exact normalized match
+            - OR current starts-with link_url (non-root)
+            - OR special-case: post pages match blog_index
+        {%- endcomment -%}
+        <ul class="visible-links">
+          {%- for link in site.data.navigation.main -%}
+            {%- comment -%}
+              Prepare raw link string and detect external/anchor links.
+            {%- endcomment -%}
+            {% assign raw_link = link.url | default: '/' | strip %}
+            {% assign is_external = false %}
+            {% if raw_link contains '://' or raw_link | slice: 0,2 == '//' or raw_link | slice: 0,1 == '#' %}
+              {% assign is_external = true %}
+            {% endif %}
+
+            {%- if is_external -%}
+              {% assign link_url = raw_link %}
+            {%- else -%}
+              {%- capture link_c %}{{ raw_link | replace: 'index.html','' | replace: '//','/' | strip }}{% endcapture -%}
+              {% assign link_url = link_c | replace: baseurl, '' %}
+              {% if link_url == '' %}{% assign link_url = '/' %}{% endif %}
+              {% unless link_url == '/' %}
+                {% unless link_url | slice: -1, 1 == '/' %}
+                  {% assign link_url = link_url | append: '/' %}
+                {% endunless %}
+              {% endunless %}
+            {%- endif -%}
+
+            {%- comment -%}
+              Determine match with starts-with logic.
+            {%- endcomment -%}
+            {% assign match = false %}
+            {% unless is_external %}
+              {% if current == link_url %}
+                {% assign match = true %}
+              {% else %}
+                {%- comment -%}
+                  starts-with: compare the first N characters of current to link_url
+                {%- endcomment -%}
+                {% if link_url != '/' %}
+                  {% assign link_len = link_url | size %}
+                  {% if current | slice: 0, link_len == link_url %}
+                    {% assign match = true %}
+                  {% endif %}
+                {% endif %}
+                {%- comment -%}
+                  blog special-case: allow post pages to mark the blog nav active
+                {%- endcomment -%}
+                {% if is_post and link_url == blog_index %}
+                  {% assign match = true %}
+                {% endif %}
+              {% endif %}
+            {% endunless %}
+
+            <li class="masthead__menu-item">
+              <a href="{{ link.url | relative_url }}"
+                 class="{% if match %}active{% endif %}"
+                 {% if link.description %}title="{{ link.description }}"{% endif %}
+                 {% if link.target %}target="{{ link.target }}"{% endif %}>
+                {{ link.title }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        {% if site.search == true %}
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">
+            {{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}
+          </span>
+          <i class="fas fa-search"></i>
+        </button>
+        {% endif %}
+
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">
+            {{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}
+          </span>
+          <div class="navicon"></div>
+        </button>
+
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>

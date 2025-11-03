@@ -1,6 +1,6 @@
 ---
 title: "Hello, Jekyll"
-date: 2025-11-02
+date: 2025-11-01
 tags: [intro]
 layout: single
 ---

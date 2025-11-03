@@ -1,19 +1,69 @@
-title: "Eric’s Blog"
-description: "Blogging about code, projects, and photos"
-url: "https://dong0085.github.io"
+title: 'Eric’s Blog'
+description: 'Blogging about code, projects, and photos'
+url: 'https://dong0085.github.io'
 remote_theme: mmistakes/minimal-mistakes
+locale: 'en-CA'
+title_separator: '|'
+logo: '/assets/images/cheng.png'
+repository: 'dong0085/dong0085.github.io'
 
 plugins:
   - jekyll-remote-theme
-  - jekyll-include-cache   
+  - jekyll-include-cache
   - jekyll-paginate
 
 # Blog settings
-paginate: 5
-paginate_path: "/blog/page:num/"
+paginate: 12
+paginate_path: '/blog/page:num/'
+enable_copy_code_button: true
 
-# Collections 
+# Collections
 collections:
   projects:
     output: true
     permalink: /projects/:title/
+
+defaults:
+  # _posts
+  - scope:
+      path: ''
+      type: posts
+    values:
+      layout: single
+      show_date: true
+      comments: true
+      share: true
+
+  # _pages
+  # - scope:
+  #     path: ''
+  #     type: pages
+  #   values:
+  #     layout: single
+
+author:
+  name: 'Cheng (Eric) Dong'
+  avatar: '/assets/images/IMG_1500.jpeg'
+  bio: 'Mobile App Developer specializing in Flutter, passionate about tech and personal growth. Avid runner, hiker, and photographer, always eager to learn.'
+  location: 'Ottawa, Canada'
+  links:
+    - label: 'GitHub'
+      icon: 'fab fa-fw fa-github'
+      url: 'https://github.com/dong0085'
+
+footer:
+  since: 2024
+  links:
+    - label: 'GitHub'
+      icon: 'fab fa-fw fa-github'
+      url: 'https://github.com/dong0085'
+
+comments:
+  provider: 'giscus'
+  giscus:
+    repo_id: 'R_kgDOQOCARw'
+    category_name: 'General'
+    category_id: 'DIC_kwDOQOCAR84CxZ9p'
+    discussion_term: 'pathname'
+    reactions_enabled: '1' # '1' for enabled (default), '0' for disabled
+    theme: 'light' # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
