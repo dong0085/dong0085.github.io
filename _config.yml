@@ -1,0 +1,18 @@
+title: "Eric’s Notes"
+description: "Blogging about code, projects, and photos"
+url: "https://<your-username>.github.io"
+remote_theme: mmistakes/minimal-mistakes
+
+plugins:
+  - jekyll-remote-theme     # lets you load themes from GitHub
+  - jekyll-include-cache    # (speeds up includes; optional)
+
+# Blog settings
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# Collections (you can add projects later)
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
