@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-11-03T14:04:13-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Eric’s Blog</title><subtitle>Blogging about code, projects, and photos</subtitle><entry><title type="html">Hello, Jekyll</title><link href="http://localhost:4000/2025/11/02/hello-world.html" rel="alternate" type="text/html" title="Hello, Jekyll" /><published>2025-11-02T00:00:00-04:00</published><updated>2025-11-02T00:00:00-04:00</updated><id>http://localhost:4000/2025/11/02/hello-world</id><content type="html" xml:base="http://localhost:4000/2025/11/02/hello-world.html"><![CDATA[<h1 id="my-first-post-written-in-markdown">My first post! Written in Markdown.</h1>
+
+<p>Long time ago, I wanted to build a blog</p>
+
+<p>The blogging world was <em>Scary</em>. But I pushed on.</p>
+
+<p>Somehow I found some <a href="https://github.com/mmistakes/minimal-mistakes">hope</a></p>
+
+<h3 id="and-i-decided-to-do-it">And I decided to do it!</h3>]]></content><author><name></name></author><category term="intro" /><summary type="html"><![CDATA[My first post! Written in Markdown.]]></summary></entry></feed>

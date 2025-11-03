@@ -1,17 +1,17 @@
-title: "Eric’s Notes"
+title: "Eric’s Blog"
 description: "Blogging about code, projects, and photos"
 url: "https://dong0085.github.io"
-remote_theme: mmistakes/minimal-mistakes
+theme: minimal-mistakes-jekyll
 
 plugins:
-  - jekyll-remote-theme     # lets you load themes from GitHub
-  - jekyll-include-cache    # (speeds up includes; optional)
+  - jekyll-include-cache   
+  - jekyll-paginate
 
 # Blog settings
 paginate: 5
 paginate_path: "/blog/page:num/"
 
-# Collections (you can add projects later)
+# Collections 
 collections:
   projects:
     output: true
