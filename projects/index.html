@@ -1,8 +1,12 @@
 ---
-layout: archive
+layout: single
 title: "Projects"
 permalink: /projects/
-collection: projects
-entries_layout: grid
 nav_section: projects
 ---
+
+{% assign items = site.projects | sort: 'title' %} <div class="entries-grid"> {% for item in items %} <article
+    class="archive__item">
+    <h2 class="archive__item-title"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2> {% if item.excerpt
+    %}<p class="archive__item-excerpt">{{ item.excerpt }}</p>{% endif %}
+  </article> {% endfor %} </div>
