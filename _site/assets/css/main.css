@@ -4285,8 +4285,7 @@ body {
 /* Active navigation link styling */
 .greedy-nav a.active {
   color: #3d405b;
-  font-weight: bold;
-  border-bottom: 2px solid #3d405b; }
+  font-weight: bold; }
 
 .masthead__menu-item a.active {
   color: #3d405b;
