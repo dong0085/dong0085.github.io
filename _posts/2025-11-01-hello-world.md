@@ -5,7 +5,7 @@ tags: [intro]
 layout: single
 ---
 
-# My first post! Written in Markdown.
+My first post! Written in Markdown.
 
 Long time ago, I wanted to build a blog
 

@@ -10,11 +10,20 @@ repository: 'dong0085/dong0085.github.io'
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
-  - jekyll-paginate
+  - jekyll-paginate-v2
 
 # Blog settings
-paginate: 12
-paginate_path: '/blog/page:num/'
+blog_index: '/'
+pagination:
+  enabled: true
+  per_page: 6
+  permalink: '/page:num/'
+  title: ':title - page :num'
+  sort_reverse: true
+  trail:
+    before: 1
+    after: 1
+future: true
 enable_copy_code_button: true
 
 # Collections
@@ -33,6 +42,7 @@ defaults:
       show_date: true
       comments: true
       share: true
+      nav_section: blog
 
   # _pages
   # - scope:

@@ -2,6 +2,7 @@
 layout: single
 title: About
 permalink: /about/
+nav_section: about
 ---
 
 Hi, I’m Eric. I write about the projects I’m building, the code I learn along the way, and the photos that inspire me.

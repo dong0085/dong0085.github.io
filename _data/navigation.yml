@@ -1,7 +1,10 @@
 main:
   - title: "Blog"
-    url: /blog/
+    url: /
+    section: blog
   - title: "Projects"
     url: /projects/
+    section: projects
   - title: "About"
     url: /about/
+    section: about
