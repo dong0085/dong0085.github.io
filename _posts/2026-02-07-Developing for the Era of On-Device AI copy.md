@@ -1,5 +1,5 @@
 ---
-title: 'Auracst: how it works and where it doesn't'
+title: 'Auracst: transforming public audio sharing'
 date: 2026-03-02
 tags: [blog]
 layout: single
