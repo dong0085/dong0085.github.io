@@ -3,7 +3,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease;
 
   &:hover {
     color: #333;
@@ -27,5 +29,24 @@
   &.active {
     color: #3d405b;
     font-weight: bold;
+  }
+}
+
+// Mobile styles
+@media (max-width: 599px) {
+  .page__content {
+    font-size: 16px;
+  }
+}
+
+@include breakpoint($medium) {
+  .page__content {
+    font-size: 18px;
+  }
+}
+
+@include breakpoint($large) {
+  .page__content {
+    font-size: 19px;
   }
 }
